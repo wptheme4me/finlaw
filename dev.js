@@ -40,11 +40,11 @@ metalsmith(__dirname)
       // reverse: true
     }
   }))
-  // .use( function(files, ms, done){
-  //   // console.log('MS: ', ms.)
-  //   // console.log('files: ', files)
-  //   done()
-  // })
+   .use( function(files, ms, done){
+     //console.log('MS: ', ms.)
+     console.log('files: ', files)
+     done()
+   })
   .use(layouts({
     engine: 'pug',
     directory: 'layouts',
@@ -59,7 +59,7 @@ metalsmith(__dirname)
     server: 'build',
     browser: ['chrome'],
     // browser: ["chrome", "iexplore", "firefox"]
-    files: ['src/**/*.scss', 'src/**/*.md', 'layouts/**/*.pug', 'src/**/*.js']
+    files: ['src/**/*.scss', 'src/index.md', 'src/**/*.md', 'layouts/**/*.pug', 'src/**/*.js']
   }))
   // .use(uglify())
   // .use(htmlMinifier({
